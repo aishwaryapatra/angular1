@@ -14,9 +14,8 @@ export class AppComponent {
   notes:Array<Note>= [];
 
 
-constructor(private notesService: NotesService)
- {
- }
+constructor(private notesService: NotesService){}
+
  ngOnInit()
  {
    this.notesService.getNotes().subscribe(
@@ -31,6 +30,7 @@ constructor(private notesService: NotesService)
      }
    )
  }
+
  takeNote()
  {
    // console.log(this.note);
