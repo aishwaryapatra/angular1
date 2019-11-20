@@ -8,7 +8,7 @@ import { NotesService } from './notes.service';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
     errMessage: string;
     note:Note=new Note();
     notes:Array<Note>= [];
