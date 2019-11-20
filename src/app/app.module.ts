@@ -24,7 +24,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     BrowserAnimationsModule,
     MatInputModule,
     MatButtonModule,
-  MatExpansionModule],
+    MatExpansionModule],
   providers: [NotesService],
   bootstrap: [AppComponent ]
 })

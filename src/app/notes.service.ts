@@ -10,7 +10,6 @@ export class NotesService {
   getNotes(): Observable<Array<Note>> {
     return this.httpClient.get<Array<Note>>('http://localhost:3000/notes');
 }
-
   addNote(note: Note): Observable<Note> {
     return this.httpClient.post<Note>('http://localhost:3000/notes',note);
  }

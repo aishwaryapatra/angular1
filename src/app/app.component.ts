@@ -9,15 +9,13 @@ import { NotesService } from './notes.service';
 })
 
 export class AppComponent {
-  errMessage: string;
-  note:Note=new Note();
-  notes:Array<Note>= [];
+    errMessage: string;
+    note:Note=new Note();
+    notes:Array<Note>= [];
+  constructor(private notesService: NotesService){}
 
-
-constructor(private notesService: NotesService){}
-
- ngOnInit()
- {
+    ngOnInit()
+   {
    this.notesService.getNotes().subscribe(
      data=>{
        console.log(data);
@@ -28,13 +26,13 @@ constructor(private notesService: NotesService){}
        // console.log(error);
        this.errMessage=error.message;
      }
-   )
+   );
  }
 
  takeNote()
  {
    // console.log(this.note);
-   if((this.note.title ||this.note.text)!='')
+   if((this.note.title ||this.note.text)!=='')
    {
    this.notesService.addNote(this.note).subscribe(
      data=>{
@@ -47,7 +45,7 @@ constructor(private notesService: NotesService){}
       //  console.log(error);
        this.errMessage=error.message;
      }
-   )
+   );
    this.note = new Note();
  }
 
