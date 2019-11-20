@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import {Note} from './note';
 import { NotesService } from './notes.service';
 
@@ -12,9 +12,10 @@ export class AppComponent {
     errMessage: string;
     note:Note=new Note();
     notes:Array<Note>= [];
+
   constructor(private notesService: NotesService){}
 
-    ngOnInit()
+  ngOnInit()
    {
    this.notesService.getNotes().subscribe(
      data=>{
@@ -36,13 +37,10 @@ export class AppComponent {
    {
    this.notesService.addNote(this.note).subscribe(
      data=>{
-       
-           this.notes.push(data);
-       
+           this.notes.push(data); 
      },
      error=>
      {
-      //  console.log(error);
        this.errMessage=error.message;
      }
    );
@@ -50,7 +48,7 @@ export class AppComponent {
  }
 
 else {
-  this.errMessage='Title and Text both are required fields'
+  this.errMessage='Title and Text both are required fields';
     console.log(this.errMessage);
 }
  
