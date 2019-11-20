@@ -11,9 +11,10 @@ import {MatInputModule} from '@angular/material/input';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { NotesService } from './notes.service';
 import {MatButtonModule} from '@angular/material/button'
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
-  declarations: [ AppComponent,HeaderComponent],
+  declarations: [AppComponent,HeaderComponent],
   imports: [BrowserModule,HttpClientModule,
     MatCardModule,
     MatFormFieldModule,
@@ -22,7 +23,8 @@ import {MatButtonModule} from '@angular/material/button'
     MatToolbarModule,
     BrowserAnimationsModule,
     MatInputModule,
-    MatButtonModule],
+    MatButtonModule,
+  MatExpansionModule],
   providers: [NotesService],
   bootstrap: [AppComponent ]
 })

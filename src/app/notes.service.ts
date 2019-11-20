@@ -5,9 +5,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class NotesService {
-  constructor(private httpClient: HttpClient) {
-
-  }
+  constructor(private httpClient: HttpClient) {}
 
   getNotes(): Observable<Array<Note>> {
     return this.httpClient.get<Array<Note>>('http://localhost:3000/notes');
