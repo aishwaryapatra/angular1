@@ -15,14 +15,19 @@
       <textarea name="text" [(ngModel)]="note.text" matInput placeholder="Text"></textarea>
     </mat-form-field>
     </div>
-    <div><button mat-button (click)= "takeNote()" color="primary">Done</button></div>
+    <div><button mat-button [disabled]="toggle" (click)= "takeNote()" color="primary">Done</button></div>
+    <div><button mat-button (click)= "update_submit()" color="primary">Update Submit</button></div>
+
     </mat-expansion-panel>
     
 
-<mat-card *ngFor="let item of notes">
+<mat-card *ngFor="let item of notes| paginate:{itemsPerPage:3,currentPage:p}">
     <mat-card-title>{{item.title}}</mat-card-title>
     <mat-card-content>{{item.text}}</mat-card-content>
+    <button mat-button (click)= "delete(item)" color="primary">Delete</button>
+    <button mat-button (click)= "update(item.id)" color="primary">Update</button>
 </mat-card>
+<pagination-controls (pageChange)="p=$event"></pagination-controls>
 
 <!-- To add notes -->
 

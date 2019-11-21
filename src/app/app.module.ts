@@ -12,6 +12,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { NotesService } from './notes.service';
 import {MatButtonModule} from '@angular/material/button';
 import { MatExpansionModule } from '@angular/material/expansion';
+import {NgxPaginationModule} from 'ngx-pagination';
+
 
 @NgModule({
   declarations: [AppComponent,HeaderComponent],
@@ -24,7 +26,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
     BrowserAnimationsModule,
     MatInputModule,
     MatButtonModule,
-    MatExpansionModule],
+    MatExpansionModule,
+    NgxPaginationModule
+    ],
   providers: [NotesService],
   bootstrap: [AppComponent ]
 })
